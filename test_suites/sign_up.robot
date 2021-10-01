@@ -15,14 +15,14 @@ ${gender}   F
 
 ${text_signup_success}      Đăng ký tài khoản thành công
 *** Test Cases ***
-# ALL_01
-#     [Documentation]  Create account 
-#     [Tags]              Create account with field email is invalid
-#     Given Open Website
-#     When Click link signup     ${link_signup}
-#     Then Input email signup            ${email_temp1} 
-#     And Element should be disabled      ${btn_submit_signup}
-#     [Teardown]  Close Website
+ALL_01
+    [Documentation]  Create account 
+    [Tags]              Create account with field email is invalid
+    Given Open Website
+    When Click link signup     ${link_signup}
+    Then Input email signup            ${email_temp1} 
+    And Element should be disabled      ${btn_submit_signup}
+    [Teardown]  Close Website
 
 ALL_02
     [Documentation]  Create account 
