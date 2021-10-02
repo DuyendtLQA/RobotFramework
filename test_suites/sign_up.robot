@@ -14,6 +14,7 @@ ${year}             1999
 ${gender}           F
 
 ${text_signup_success}    Đăng ký tài khoản thành công
+
 *** Test Cases ***
 ALL_01
   [Documentation]                   Create account
