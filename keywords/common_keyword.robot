@@ -68,12 +68,12 @@ Select App Frame
 
 Hover on element
   [Arguments]                    ${locator}
-  wait until keyword succeeds    1 minute      5seconds    page should contain element    ${locator}    
+  wait until keyword succeeds    1 minute      5seconds    page should contain element    ${locator}
   Mouse Over                     ${locator}
 
 Wait for an element to appear
   [Arguments]                    ${locator}
-  wait until keyword succeeds    1 minute      5seconds    page should contain element    ${locator}    
+  wait until keyword succeeds    1 minute      5seconds    page should contain element    ${locator}
 
 Close Website
   close browser
