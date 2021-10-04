@@ -3,10 +3,17 @@ Resource    ../common_keyword.robot
 Resource    ../imports.robot
 
 *** Variables ***
+${link_signup}          css=.hd-user ~ a
+${btn_submit_signup}    xpath=//button[@type="submit"][contains(text(), "ĐĂNG KÝ")]
+
 ${input_email_signup}        css=#main [name="email"]
 ${input_password_signup}     css=#main #password
 ${input_password2_signup}    css=#main #password2
 ${icon_birthday_signup}      css=#main                   [class="hd hd-calendar"]
+
+${icon_check_err}                 xpath=//i[@data-fv-icon-for='email']
+${text_email_err}                 Email không hợp lệ
+${popup_email_err}                css=.popover-content
 
 # select year, month
 ${select_year}     css=.calendar.left .yearselect
@@ -17,8 +24,12 @@ ${day_t}       xpath=//*[@class="calendar left single"]//table//td[contains(text
 ${gender_t}    xpath=//input[@name="gender" and @value="
 *** Keywords ***
 Click link signup
-  [Arguments]               ${btn_signup}
-  Wait And Click Element    ${btn_signup}
+  Wait And Click Element    ${link_signup}
+
+Check popup email errors
+  Hover on element                  ${icon_check_err}
+  ${text_err}=      Get text        ${popup_email_err}
+  Should Be Equal                   ${text_err}         ${text_email_err}
 
 Input email signup
   [Arguments]            ${email}
@@ -56,6 +67,5 @@ Check gender
   Wait And Click Element    ${gender_option}
 
 Click button sign up
-  [Arguments]               ${btn_submit_signup}
   Wait And Click Element    ${btn_submit_signup}
 

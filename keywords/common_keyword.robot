@@ -75,6 +75,10 @@ Wait for an element to appear
   [Arguments]                    ${locator}
   wait until keyword succeeds    1 minute      5seconds    page should contain element    ${locator}
 
+Wait for an text to appear
+  [Arguments]                    ${text}
+  wait until keyword succeeds    1 minute      5seconds    page should contain    ${text}
+
 Close Website
   close browser
 
