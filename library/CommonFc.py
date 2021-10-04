@@ -19,3 +19,6 @@ class CommonFc():
       # print("the images are not equal")
       return 1
 
+  @staticmethod
+  def remove_spaces_string(str_temp):
+      return  ' '.join(str_temp.split())
