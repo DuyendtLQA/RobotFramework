@@ -41,3 +41,13 @@ ALL_07
   Given Open Website
   Check result search when search text not exits
   [Teardown]    Close Website
+
+All_d
+  [Documentation]              Search
+  [Tags]                       Check result search when search text not exits
+  ${list} =	 Create List
+  FOR  ${i}  IN RANGE   1    5
+  ${xpath_item} =   Catenate           SEPARATOR=     xpath=//xyz        ${i}     /abc
+  append to list     ${list}    ${xpath_item}
+  END
+  log  ${list}
