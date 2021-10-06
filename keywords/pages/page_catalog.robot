@@ -13,7 +13,9 @@ ${locator_product_item}    css=.row.products                               > div
 ${product_item_one}        css=.row.products                               > div:nth-of-type(1)
 ${locator_place}           css=#category_content .filter__button.active
 
-${btn_sort}    xpath=//a[contains(text(),"Giá tốt nhất ")]
+${btn_sort}                xpath=//a[contains(text(),"Giá tốt nhất ")]
+${btn_follow_us}           css=.fa.fa-twitter
+${btn_follow_hotdeal}      css=div[aria-label="Follow @HotdealVietnam"]
 
 *** Keywords ***
 Check info when filter place in catalog
@@ -42,3 +44,12 @@ Check info when sort place in catalog
   END
   ${check}=                     Check List Desc       ${list_price}
   Should Be Equal As Strings    ${check}              True
+
+Follow us on twiter
+  # click button follow
+  Scroll Element into View      ${btn_follow_us}
+  Wait And Click Element        ${btn_follow_us}
+  Sleep   10s
+  ${handles}=   Get Window Handles
+  Switch Window   ${handles}[1]
+  Wait And Click Element        ${btn_follow_hotdeal}

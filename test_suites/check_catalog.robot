@@ -17,3 +17,10 @@ ALL_13
   Given Open Website
   Then Check info when sort place in catalog
   [Teardown]                   Close Website
+
+ALL_14
+  [Documentation]              Follow us
+  [Tags]                       Follow us on twiter
+  Given Open Website
+  Then Follow us on twiter
+  [Teardown]                   Close Website
