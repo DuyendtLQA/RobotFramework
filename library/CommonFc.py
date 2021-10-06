@@ -22,3 +22,11 @@ class CommonFc():
   @staticmethod
   def remove_spaces_string(str_temp):
       return  ' '.join(str_temp.split())
+
+  def check_list_desc(self, test_list):
+    flag = False
+    test_list1 = test_list[:]
+    test_list1.sort()
+    if (test_list1 == test_list):
+        flag = True
+    return flag
