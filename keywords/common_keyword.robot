@@ -13,7 +13,6 @@ Open Website
   ${desired caps} =          Create Dictionary                            chromeOptions=${args}
   open browser               ${environment_url}                           ${browser}                     desired_capabilities=${desired caps}
   maximize browser window
-  click element              xpath=//button[contains(text(),"ĐỒNG Ý")]
 
 Wait and input text
   [Arguments]                    ${locator}    ${txt_value}
